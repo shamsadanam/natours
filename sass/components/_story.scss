@@ -1,0 +1,109 @@
+.story {
+  width: 70%;
+  margin: 0 auto;
+  padding: 4rem 6rem;
+  background: $color-white;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+
+  transform: skewX(-20deg);
+
+  @include respond(tab-port) {
+    transform: skewX(0);
+  }
+
+  @include respond(xsm) {
+    width: 80%;
+  }
+
+  & > * {
+    transform: skewX(20deg);
+
+    @include respond(tab-port) {
+      transform: skewX(0);
+    }
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    text-align: center;
+    position: relative;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(45% at 50% 50%);
+    transform: translateX(-3rem) skewX(20deg);
+
+    @include respond(tab-port) {
+      clip-path: circle(45% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      transform: skewX(0);
+    }
+
+    @include respond(xsm) {
+      position: unset;
+      float: none;
+      clip-path: none;
+      shape-outside: none;
+      width: 100%;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-3rem) scale(1.4);
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    clip-path: circle(50% at 50% 50%);
+
+    @include respond(xsm) {
+      position: relative;
+      clip-path: none;
+      transform: translateX(0);
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__caption {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $color-grey-light-1;
+    transform: translate(-50%, 40%);
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 2rem;
+
+    @include respond(xsm) {
+      font-style: italic;
+      color: inherit;
+      opacity: 1;
+      top: 82%;
+      left: 50%;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    line-height: 3rem;
+    @include respond(xsm) {
+      text-align: center;
+      margin-top: 1rem;
+
+      & h3 {
+        color: $color-primary-dark;
+      }
+    }
+  }
+
+  &:hover &__img {
+    filter: blur(3px);
+    transform: translateX(-3rem) scale(1);
+  }
+  &:hover &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

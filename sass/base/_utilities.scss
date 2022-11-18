@@ -1,0 +1,104 @@
+.u-container {
+  // same as .row but for those not fit for responsive .row
+  max-width: $grid-width;
+  margin: 5rem;
+
+  @include respond(tab-port) {
+    max-width: $c-width;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-mt-2 {
+  margin-top: 2rem;
+}
+
+.u-mb-1 {
+  margin-bottom: 1rem;
+}
+
+.u-mb-8 {
+  margin-bottom: 8rem;
+  @include respond(tab-land) {
+    margin-bottom: 4rem;
+  }
+  @include respond(xsm) {
+    margin-bottom: 1rem;
+  }
+}
+
+.u-mb-2 {
+  margin-bottom: 2rem;
+}
+
+.u-mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.u-p-4 {
+  padding: 4rem;
+}
+
+.u-pl-10 {
+  padding-left: 10rem;
+}
+
+.u-px-4 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.u-py-sm {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.u-px-10 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+//test
+.mb-max {
+  margin-bottom: 50rem;
+}
+
+.mx-auto {
+  margin: 0 auto;
+  // child class needs a fix width and display block
+}
+
+.my-3 {
+  margin: 3rem 0rem;
+}
+
+.d-block {
+  display: block;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-80 {
+  width: 80%;
+}
